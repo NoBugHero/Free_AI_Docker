@@ -1,8 +1,9 @@
-# Free AI Docker
+# Free_AI_Docker 🐬📦
 
-一个基于 Docker 的 AI 服务框架，支持多种 AI 模型的集成和提示词优化。
+Empower AI with more **System Permissions** through an **the Middleware Container** for **Advanced Automation**.
+Serves as **the Middleware Container** between large AI models and applications.
 
-## 项目结构
+## Structure
     Free_AI_Docker/
     ├── src/
     │ ├── app.py
