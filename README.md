@@ -3,12 +3,7 @@
 Empower AI with more **System Permissions** through an **the Middleware Container** for **Advanced Automation**.
 Serves as **the Middleware Container** between large AI models and applications.
 
-## Structure
-    Free_AI_Docker/
-    ├── src/
-    │ ├── app.py
-    │ ├── ai_service.py
-    │ └── prompt_optimizer.py
-    ├── requirements.txt
-    ├── Dockerfile
-    └── README.md
+### Technical Route 1: Programmatic Parsing of AI-Returned Content and Command Execution 🛠️💻
+
+### Technical Route 2: Training an AI Model to Parse and Execute Commands Independently 🤖📚
+
