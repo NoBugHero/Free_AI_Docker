@@ -1,0 +1,12 @@
+{
+  "name": "free_ai_docker",
+  "version": "1.0.0",
+  "description": "一个基于 Docker 的 AI 服务框架，支持多种 AI 模型的集成和提示词优化。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

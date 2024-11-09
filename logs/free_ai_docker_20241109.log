@@ -1,0 +1,463 @@
+2024-11-09 11:27:31,990 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 11:27:31,990 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 11:27:32,140 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 11:27:32,280 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 11:27:32,304 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 11:27:32,837 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 11:39:59,827 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 11:39:59,837 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 11:39:59,959 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 11:40:00,110 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 11:40:00,143 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 11:40:00,750 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 11:40:13,052 - FreeAIDocker - INFO - Starting system scanner
+2024-11-09 11:40:54,294 - FreeAIDocker - INFO - Updating scan interval to 4 hours
+2024-11-09 11:40:55,331 - FreeAIDocker - INFO - Updating scan interval to 1 hours
+2024-11-09 11:40:56,111 - FreeAIDocker - INFO - Starting system scanner
+2024-11-09 11:40:57,695 - FreeAIDocker - INFO - Updating scan interval to 24 hours
+2024-11-09 11:42:21,286 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 11:42:21,296 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 11:42:21,440 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 11:42:21,563 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 11:42:21,573 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 11:42:22,143 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 11:45:55,796 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 11:45:55,805 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 11:45:55,928 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 11:45:56,081 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 11:45:56,091 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 11:45:56,670 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 11:48:29,312 - FreeAIDocker - INFO - Starting system scanner
+2024-11-09 11:50:05,806 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 11:50:05,816 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 11:50:05,941 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 11:50:06,096 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 11:50:06,116 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 11:50:06,665 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 11:50:19,314 - FreeAIDocker - INFO - Starting system scanner
+2024-11-09 11:50:19,388 - FreeAIDocker - ERROR - Failed to decrypt resource: 
+2024-11-09 11:50:19,388 - FreeAIDocker - INFO - Resource not found: 钱包地址
+2024-11-09 11:50:19,388 - FreeAIDocker - INFO - Resource not found: 账号密码
+2024-11-09 11:50:19,388 - scanner - INFO - Resource scan completed successfully
+2024-11-09 11:50:19,389 - scanner - INFO - Scan completed:
+扫描时间: 2024-11-09T11:50:19.314868
+
+资源状态:
+
+项目结构:
+- 文件数量: 13988
+- 目录数量: 1318
+2024-11-09 11:50:46,455 - FreeAIDocker - INFO - Resource saved successfully: api_configs
+2024-11-09 11:51:04,392 - FreeAIDocker - INFO - Resource saved successfully: money_goals
+2024-11-09 11:51:30,117 - FreeAIDocker - INFO - Resource saved successfully: 其他资源
+2024-11-09 12:00:36,069 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 12:00:36,079 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 12:00:36,129 - FreeAIDocker - INFO - Resource not found: app_state
+2024-11-09 12:00:36,132 - FreeAIDocker - INFO - Resource not found: system_env
+2024-11-09 12:00:36,168 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 12:00:36,358 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 12:00:36,378 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 12:00:36,943 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 12:00:43,788 - FreeAIDocker - INFO - Resource saved successfully: system_env
+2024-11-09 12:00:43,788 - FreeAIDocker - INFO - Resource not found: app_state
+2024-11-09 12:00:43,799 - FreeAIDocker - INFO - Resource saved successfully: app_state
+2024-11-09 12:00:44,617 - FreeAIDocker - INFO - Resource saved successfully: system_env
+2024-11-09 12:00:44,628 - FreeAIDocker - INFO - Resource saved successfully: app_state
+2024-11-09 12:00:45,328 - FreeAIDocker - INFO - Resource saved successfully: system_env
+2024-11-09 12:00:45,329 - FreeAIDocker - INFO - Resource saved successfully: app_state
+2024-11-09 12:01:08,583 - FreeAIDocker - INFO - Resource saved successfully: 其他资源
+2024-11-09 12:01:15,786 - FreeAIDocker - INFO - Starting system scanner
+2024-11-09 12:01:15,886 - FreeAIDocker - ERROR - Failed to decrypt resource: 
+2024-11-09 12:01:15,887 - FreeAIDocker - INFO - Resource not found: 钱包地址
+2024-11-09 12:01:15,887 - FreeAIDocker - INFO - Resource not found: 账号密码
+2024-11-09 12:01:15,887 - scanner - INFO - Resource scan completed successfully
+2024-11-09 12:01:15,887 - scanner - INFO - Scan completed:
+扫描时间: 2024-11-09T12:01:15.786412
+
+资源状态:
+
+项目结构:
+- 文件数量: 13988
+- 目录数量: 1319
+2024-11-09 12:01:40,677 - FreeAIDocker - INFO - Resource saved successfully: money_goals
+2024-11-09 12:02:09,138 - FreeAIDocker - ERROR - Failed to decrypt resource: 
+2024-11-09 12:02:09,138 - FreeAIDocker - INFO - Resource saved successfully: api_configs
+2024-11-09 12:02:09,149 - FreeAIDocker - INFO - Resource saved successfully: app_state
+2024-11-09 12:11:37,615 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 12:11:37,627 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 12:11:37,696 - FreeAIDocker - ERROR - Failed to decrypt resource: 
+2024-11-09 12:11:37,697 - FreeAIDocker - ERROR - Failed to decrypt resource: 
+2024-11-09 12:11:37,697 - FreeAIDocker - ERROR - Failed to decrypt resource: 
+2024-11-09 12:11:38,032 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 12:11:38,048 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 12:11:38,541 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 12:12:03,723 - FreeAIDocker - INFO - Resource saved successfully: 其他资源
+2024-11-09 12:15:00,304 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 12:15:00,314 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 12:15:00,375 - FreeAIDocker - ERROR - Failed to decrypt resource: 
+2024-11-09 12:15:00,376 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 12:15:00,376 - FreeAIDocker - ERROR - Failed to decrypt resource: 
+2024-11-09 12:15:00,376 - FreeAIDocker - ERROR - Failed to decrypt resource: 
+2024-11-09 12:15:00,618 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 12:15:00,638 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 12:15:01,182 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 12:16:49,557 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 12:16:49,567 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 12:16:49,608 - FreeAIDocker - ERROR - Failed to decrypt resource: 
+2024-11-09 12:16:49,608 - FreeAIDocker - ERROR - Failed to decrypt resource: 
+2024-11-09 12:16:49,608 - FreeAIDocker - ERROR - Failed to decrypt resource: 
+2024-11-09 12:16:49,612 - FreeAIDocker - ERROR - Failed to decrypt resource: 
+2024-11-09 12:16:49,612 - FreeAIDocker - INFO - Resource not found: 钱包地址
+2024-11-09 12:16:49,612 - FreeAIDocker - INFO - Resource not found: 账号密码
+2024-11-09 12:16:49,613 - FreeAIDocker - ERROR - Failed to decrypt resource: 
+2024-11-09 12:16:49,665 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 12:16:49,863 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 12:16:49,883 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 12:16:50,438 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 12:16:52,333 - FreeAIDocker - ERROR - Failed to decrypt resource: 
+2024-11-09 12:16:52,333 - FreeAIDocker - INFO - Resource not found: 钱包地址
+2024-11-09 12:16:52,333 - FreeAIDocker - INFO - Resource not found: 账号密码
+2024-11-09 12:16:52,334 - FreeAIDocker - ERROR - Failed to decrypt resource: 
+2024-11-09 12:17:09,769 - FreeAIDocker - INFO - Resource saved successfully: 其他资源
+2024-11-09 12:17:09,769 - FreeAIDocker - ERROR - Failed to decrypt resource: 
+2024-11-09 12:17:09,770 - FreeAIDocker - INFO - Resource not found: 钱包地址
+2024-11-09 12:17:09,770 - FreeAIDocker - INFO - Resource not found: 账号密码
+2024-11-09 12:17:09,770 - FreeAIDocker - ERROR - 获取资源列表失败: 'str' object has no attribute 'get'
+2024-11-09 12:19:08,644 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 12:19:08,655 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 12:19:08,696 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:19:08,697 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:19:08,697 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:19:08,700 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:19:08,749 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 12:19:08,944 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 12:19:08,966 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 12:19:09,537 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 12:19:11,942 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:19:22,847 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:19:22,847 - FreeAIDocker - INFO - Resource saved successfully: 其他资源
+2024-11-09 12:19:58,487 - FreeAIDocker - INFO - Resource saved successfully: API密钥
+2024-11-09 12:20:11,385 - FreeAIDocker - INFO - Starting system scanner
+2024-11-09 12:20:11,534 - scanner - INFO - Resource scan completed successfully
+2024-11-09 12:20:11,534 - scanner - INFO - Scan completed:
+扫描时间: 2024-11-09T12:20:11.385054
+
+资源状态:
+- api_keys: 1 个资源
+
+项目结构:
+- 文件数量: 13988
+- 目录数量: 1319
+2024-11-09 12:20:36,450 - FreeAIDocker - ERROR - Invalid resource data format: {'TY': {'name': 'TY', 'key': 'gAAAAABnLuMUWQCoeZJ62EO8jQ69M-EMTaRQ2SFeXRl9m_kbopSDWgNoUnGrMXjalSjCj9eo8iANSjcNFifKTPEiqDZKbQao6T9pc_5LwEF2MLbVcqs7SDVivdhFizd0w4fqI1lpjp66', 'url': 'gAAAAABnLuMUB4BSsIls8MrSHkY1gV1_qLP4Uw1Vvu6hFW2ylXSQbd6gMVMHVugu95RpL6UZ1ajHPSD0zsF41NuQpD9NLrCj6agMESpy-QLswmaYUjOhoXXWLqkh8K3ilEiWysxLk3m88tO1YkAQ8ox3NKvaGaTRmbWnfFLReH1zYCwkCF1rF9c=', 'calls': 0, 'last_used': None}}
+2024-11-09 12:20:36,450 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:20:36,450 - FreeAIDocker - ERROR - 保存API配置失败: Resource data must contain 'name' field
+2024-11-09 12:21:35,149 - FreeAIDocker - ERROR - Invalid resource data format: {'TY': {'name': 'TY', 'key': 'gAAAAABnLuNPvaEd7qBJWCy2i5fh1yA4_ktmc7MorSZdXBuckYCD_vMG13DvIbKTk8NfvE49XItJJpRvycnGK3_o3WX3xcLIGX3Hx_W7oau7CzAz8wRMynuDdfAZqFVx4h8Qh0Xv27Zi', 'url': 'gAAAAABnLuNPmRo7PsArOruJZ6TzMvhTxCAl05PPrwnJ0nYG1R2qRA1VNjrD508xizH-jq8WHT8rtUdgfOLNnj74L4Q4DWjEb65Hde7H34tww2u-WuiRmRw1AC_Ssi-XOxocnY3CQeecb9xGGSG5Etfvh1YuOuBoep1N6jnUpsj8sviUD4SFZVc=', 'calls': 0, 'last_used': None}}
+2024-11-09 12:21:35,149 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:21:35,149 - FreeAIDocker - ERROR - 保存API配置失败: Resource data must contain 'name' field
+2024-11-09 12:21:58,195 - FreeAIDocker - ERROR - Invalid resource data format: {'TY': {'name': 'TY', 'key': 'gAAAAABnLuNmU1li22AElHHHP-Zh-s1ia1xPpx7J8kLL0cakN2YFzQzJqLhgSDz9J8knA3YWUQ85M8xisuVPYJ2M4hKaP24keIE8e4EHD25JRpNu0Jzra4Hp3kf0rKKhNAl9WtUg6qQKtcHRlc_sl8QGRGVXgbsZnA==', 'url': 'gAAAAABnLuNmcr_EvNT1pbDkgk3_yEQtIqzK2UNwur0wYO5nGn3aM4aAYmkT1bsXzBnIhW2soGO9lul8d7bnKF4Xs-bk-zCEQ77edp-_VGnTiiXj7sXNwHt1bBTZGyLp3iEJz56rAvKkFU6AvHbolslJMdeKvDqd2R39L7vGqQZ-jmOwkSeVpmE=', 'calls': 0, 'last_used': None}}
+2024-11-09 12:21:58,195 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:21:58,195 - FreeAIDocker - ERROR - 保存API配置失败: Resource data must contain 'name' field
+2024-11-09 12:22:11,865 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 12:22:11,876 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 12:22:11,915 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:22:11,916 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:22:11,916 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:22:11,920 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:22:11,965 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 12:22:12,160 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 12:22:12,171 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 12:22:12,736 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 12:22:14,278 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:22:16,102 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:22:16,705 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:22:40,866 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:22:40,867 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:22:40,867 - FreeAIDocker - ERROR - Invalid resource data format: {'TY': {'name': 'TY', 'key': 'gAAAAABnLuOQ5P_w8flutAyWOsr9gquxNtoQ9RpXjevqHBchcQJE7CG4cNAMBkqvGZedV37uCzEfzJZKy6oc44k5gcHqA2Ku3wk6fHG4ofD69Jx9JX1i3u6KhX2aT0RCg1_t9CpSaWhq', 'url': 'gAAAAABnLuOQwjYHnLWrQffQULSnLM9ZNeHyrSciG1KeYBdxsDEH8L2otVoB6XCelJxOP0FWSDCs_r2yzvDhoDAYuo6oWFW9vaEZUdxAbVF19J3GEoGbkziC_sEEI0rzJvVA56UnDO9ealbYzhK9WxEbt7JhP8gnqc4H6m5I-oyEkpMCbgbp3hs=', 'calls': 0, 'last_used': None}}
+2024-11-09 12:22:40,867 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:22:40,867 - FreeAIDocker - ERROR - 保存API配置失败: Resource data must contain 'name' field
+2024-11-09 12:22:57,928 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:22:57,929 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:22:57,929 - FreeAIDocker - ERROR - Invalid resource data format: {'通义千问': {'name': '通义千问', 'key': 'gAAAAABnLuOhrkct8tX_1JfVLdD08FG3PyguRaix3h0zTDgdSLwQKFbu_CFjmfmLLTADTlFTNI-h82HVOHWAER067xHMS6N4A42L74FOYjkcrbW46460Gt0mE1tmbaQhDVU1l_30ieKA', 'url': 'gAAAAABnLuOhX1iDQPb2rHLbCQlgQ4riSJ5TQK7AnBuxPEOr0VZJGMKlj3jcQsekzgbU1Hy2hUr_lnMQRHXiPdGlBmHOowS-X99gOanV5sADjZc5GbF6VdY_1sCf3c3Y-_OFJX6J1vT3KXWy9voHH9jyVyvI0UG0YJrO_Qmj_pfNevjqfSPgzho=', 'calls': 0, 'last_used': None}}
+2024-11-09 12:22:57,929 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:22:57,929 - FreeAIDocker - ERROR - 保存API配置失败: Resource data must contain 'name' field
+2024-11-09 12:23:36,796 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:23:36,796 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:23:36,796 - FreeAIDocker - ERROR - Invalid resource data format: {'通义千问': {'name': '通义千问', 'key': 'gAAAAABnLuPIgTbbZGC2D6-ECKjGhgz6Ezhox_Gu7NdB03sca0_prqkV29FmOJoTd18r6AHRaSdGt-1W0Ob2C7u07VKwBqsijNgVbyXzT8D66pKMze_giLN_xYkTkvkQQiHvRCGGo-HY', 'url': 'gAAAAABnLuPIdChsuNpR_jHJTnsciGXzvaBfyYWTHZ2sQ5RgzIOJUbmPTIgTR-e1lTzaC-ZMQ9JvSQk9oYZDcDABAvPD_RIpTi-KyEaiAmwlq8LiQcxHisp3mB5FmxHQU6mgadPmcSLohQczCxieE6sBwNjSssqReT_KdVzG0zYIXoX19Os2asU=', 'calls': 0, 'last_used': None}}
+2024-11-09 12:23:36,797 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:23:36,797 - FreeAIDocker - ERROR - 保存API配置失败: Resource data must contain 'name' field
+2024-11-09 12:23:45,696 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 12:23:45,706 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 12:23:45,746 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 12:23:45,747 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:23:45,747 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:23:45,748 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:23:45,753 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:23:45,998 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 12:23:46,019 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 12:23:46,587 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 12:23:50,725 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:24:17,696 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:24:17,697 - FreeAIDocker - INFO - Resource saved successfully: API密钥
+2024-11-09 12:24:17,698 - FreeAIDocker - ERROR - Invalid resource data format: {'risk_level': '低风险', 'execution_mode': '手动档', 'scan_interval': 1, 'last_api_name': '21234', 'last_money_goal': '', 'last_money_idea': '', 'system_env': 'Windows'}
+2024-11-09 12:24:17,698 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:24:17,698 - FreeAIDocker - ERROR - 保存状态失败: Resource data must contain 'name' field
+2024-11-09 12:24:25,598 - FreeAIDocker - INFO - Starting system scanner
+2024-11-09 12:24:25,731 - scanner - INFO - Resource scan completed successfully
+2024-11-09 12:24:25,731 - scanner - INFO - Scan completed:
+扫描时间: 2024-11-09T12:24:25.599934
+
+资源状态:
+- api_keys: 1 个资源
+
+项目结构:
+- 文件数量: 13988
+- 目录数量: 1319
+2024-11-09 12:24:44,720 - FreeAIDocker - INFO - Resource saved successfully: 其他资源
+2024-11-09 12:24:44,721 - FreeAIDocker - ERROR - Invalid resource data format: {'risk_level': '低风险', 'execution_mode': '手动档', 'scan_interval': 1, 'last_api_name': '', 'last_money_goal': '', 'last_money_idea': '', 'system_env': 'Windows', 'last_其他资源_name': 'BAIDUNEWS'}
+2024-11-09 12:24:44,721 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:24:44,721 - FreeAIDocker - ERROR - 保存状态失败: Resource data must contain 'name' field
+2024-11-09 12:27:16,282 - FreeAIDocker - INFO - Starting system scanner
+2024-11-09 12:34:49,295 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 12:34:49,306 - command_executor - INFO - Created workspace directory: E:\Free_AI_Docker_0\Free_AI_Docker\workspace
+2024-11-09 12:34:49,306 - command_executor - INFO - Created subdirectory: E:\Free_AI_Docker_0\Free_AI_Docker\workspace\scripts
+2024-11-09 12:34:49,306 - command_executor - INFO - Created subdirectory: E:\Free_AI_Docker_0\Free_AI_Docker\workspace\data
+2024-11-09 12:34:49,306 - command_executor - INFO - Created subdirectory: E:\Free_AI_Docker_0\Free_AI_Docker\workspace\logs
+2024-11-09 12:34:49,306 - command_executor - INFO - Created subdirectory: E:\Free_AI_Docker_0\Free_AI_Docker\workspace\temp
+2024-11-09 12:34:49,306 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 12:34:49,348 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 12:34:49,349 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:34:49,349 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:34:49,349 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:34:49,354 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:34:49,604 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 12:34:49,626 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 12:34:50,180 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 12:34:52,440 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:34:55,486 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:35:02,705 - FreeAIDocker - INFO - Starting system scanner
+2024-11-09 12:35:02,814 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:35:02,815 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:35:02,815 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:35:02,815 - scanner - INFO - Resource scan completed successfully
+2024-11-09 12:35:02,815 - scanner - INFO - Scan completed:
+扫描时间: 2024-11-09T12:35:02.705452
+
+资源状态:
+
+项目结构:
+- 文件数量: 13989
+- 目录数量: 1324
+2024-11-09 12:35:26,547 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:35:26,547 - FreeAIDocker - ERROR - Invalid resource data format: {'goal': '赚100块人民币', 'idea': '创建一个网站，接入广告SDK', 'timestamp': '2024-11-09 12:35:26'}
+2024-11-09 12:35:26,547 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:35:26,547 - FreeAIDocker - ERROR - 保存赚钱目标失败: Resource data must contain 'name' field
+2024-11-09 12:35:28,035 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:35:28,035 - FreeAIDocker - ERROR - Invalid resource data format: {'goal': '赚100块人民币', 'idea': '创建一个网站，接入广告SDK', 'timestamp': '2024-11-09 12:35:28'}
+2024-11-09 12:35:28,035 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:35:28,035 - FreeAIDocker - ERROR - 保存赚钱目标失败: Resource data must contain 'name' field
+2024-11-09 12:36:04,422 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:36:09,235 - FreeAIDocker - INFO - Starting system scanner
+2024-11-09 12:36:49,852 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:36:49,852 - FreeAIDocker - ERROR - Invalid resource data format: {'goal': '赚100块人民币', 'idea': '创建一个网站，接入广告SDK', 'timestamp': '2024-11-09 12:36:49'}
+2024-11-09 12:36:49,852 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:36:49,853 - FreeAIDocker - ERROR - 保存赚钱目标失败: Resource data must contain 'name' field
+2024-11-09 12:37:51,506 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 12:37:51,517 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 12:37:51,561 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:37:51,561 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:37:51,562 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:37:51,567 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:37:51,569 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 12:37:51,838 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 12:37:51,859 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 12:37:52,396 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 12:37:54,728 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:38:01,595 - FreeAIDocker - INFO - Starting system scanner
+2024-11-09 12:38:01,698 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:38:01,698 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:38:01,698 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:38:01,699 - scanner - INFO - Resource scan completed successfully
+2024-11-09 12:38:01,699 - scanner - INFO - Scan completed:
+扫描时间: 2024-11-09T12:38:01.595910
+
+资源状态:
+
+项目结构:
+- 文件数量: 13989
+- 目录数量: 1324
+2024-11-09 12:38:17,384 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:38:17,408 - FreeAIDocker - INFO - Resource saved successfully: money_goals
+2024-11-09 12:38:17,408 - FreeAIDocker - INFO - 保存赚钱目标成功: 100块
+2024-11-09 12:38:17,408 - FreeAIDocker - ERROR - Invalid resource data format: {'risk_level': '低风险', 'execution_mode': '手动档', 'scan_interval': 1, 'last_api_name': '', 'last_money_goal': '100块', 'last_money_idea': '创建网站接入广告', 'system_env': 'Windows'}
+2024-11-09 12:38:17,408 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:38:17,408 - FreeAIDocker - ERROR - 保存状态失败: Resource data must contain 'name' field
+2024-11-09 12:38:30,090 - FreeAIDocker - INFO - Resource saved successfully: money_goals
+2024-11-09 12:38:30,090 - FreeAIDocker - INFO - 保存赚钱目标成功: 100块
+2024-11-09 12:38:30,091 - FreeAIDocker - ERROR - Invalid resource data format: {'risk_level': '低风险', 'execution_mode': '手动档', 'scan_interval': 1, 'last_api_name': '', 'last_money_goal': '100块', 'last_money_idea': '创建网站接入广告', 'system_env': 'Windows'}
+2024-11-09 12:38:30,091 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:38:30,091 - FreeAIDocker - ERROR - 保存状态失败: Resource data must contain 'name' field
+2024-11-09 12:40:14,535 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 12:40:14,546 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 12:40:14,609 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:40:14,609 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:40:14,609 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:40:14,613 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:40:14,631 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 12:40:14,856 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 12:40:14,892 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 12:40:15,405 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 12:40:20,015 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:40:25,518 - FreeAIDocker - INFO - Starting system scanner
+2024-11-09 12:40:25,695 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:40:25,695 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:40:25,696 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:40:25,696 - scanner - INFO - Resource scan completed successfully
+2024-11-09 12:40:25,696 - scanner - INFO - Scan completed:
+扫描时间: 2024-11-09T12:40:25.518600
+
+资源状态:
+
+项目结构:
+- 文件数量: 13989
+- 目录数量: 1324
+2024-11-09 12:40:36,336 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:40:36,361 - FreeAIDocker - INFO - Resource saved successfully: money_goals
+2024-11-09 12:40:36,361 - FreeAIDocker - INFO - 保存赚钱目标成功: 100块
+2024-11-09 12:40:36,362 - FreeAIDocker - ERROR - Invalid resource data format: {'risk_level': '低风险', 'execution_mode': '手动档', 'scan_interval': 1, 'last_api_name': '', 'last_money_goal': '100块', 'last_money_idea': '创建网站接入广告', 'system_env': 'Windows'}
+2024-11-09 12:40:36,362 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:40:36,362 - FreeAIDocker - ERROR - 保存状态失败: Resource data must contain 'name' field
+2024-11-09 12:40:40,237 - FreeAIDocker - INFO - 执行基于目标的赚钱方案 - 目标: 100块, 创意: 创建网站接入广告
+2024-11-09 12:40:40,237 - FreeAIDocker - INFO - Added money goals to prompt: , 
+2024-11-09 12:42:55,416 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 12:42:55,426 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 12:42:55,482 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 12:42:55,483 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:42:55,483 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:42:55,483 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:42:55,488 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:42:55,733 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 12:42:55,779 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 12:42:56,264 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 12:42:57,365 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:43:04,288 - FreeAIDocker - INFO - Starting system scanner
+2024-11-09 12:43:04,393 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:43:04,394 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:43:04,394 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:43:04,394 - scanner - INFO - Resource scan completed successfully
+2024-11-09 12:43:04,394 - scanner - INFO - Scan completed:
+扫描时间: 2024-11-09T12:43:04.288571
+
+资源状态:
+
+项目结构:
+- 文件数量: 13989
+- 目录数量: 1324
+2024-11-09 12:43:17,693 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:43:17,716 - FreeAIDocker - INFO - Resource saved successfully: money_goals
+2024-11-09 12:43:17,716 - FreeAIDocker - INFO - 保存赚钱目标成功: 赚100块
+2024-11-09 12:43:17,717 - FreeAIDocker - ERROR - Invalid resource data format: {'risk_level': '低风险', 'execution_mode': '手动档', 'scan_interval': 1, 'last_api_name': '', 'last_money_goal': '赚100块', 'last_money_idea': '创建网站接入广告', 'system_env': 'Windows'}
+2024-11-09 12:43:17,717 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:43:17,717 - FreeAIDocker - ERROR - 保存状态失败: Resource data must contain 'name' field
+2024-11-09 12:43:24,207 - FreeAIDocker - INFO - Added money goals to prompt: , 
+2024-11-09 12:43:38,972 - FreeAIDocker - INFO - 目标已达成: 赚100块
+2024-11-09 12:45:34,210 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 12:45:34,221 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 12:45:34,261 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:45:34,262 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:45:34,262 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:45:34,266 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:45:34,282 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 12:45:34,513 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 12:45:34,533 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 12:45:34,923 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:45:35,115 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 12:45:37,841 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:45:44,416 - FreeAIDocker - INFO - Starting system scanner
+2024-11-09 12:45:44,568 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:45:44,569 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:45:44,569 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:45:44,569 - scanner - INFO - Resource scan completed successfully
+2024-11-09 12:45:44,569 - scanner - INFO - Scan completed:
+扫描时间: 2024-11-09T12:45:44.416531
+
+资源状态:
+
+项目结构:
+- 文件数量: 13989
+- 目录数量: 1325
+2024-11-09 12:45:56,837 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:45:56,866 - FreeAIDocker - INFO - Resource saved successfully: money_goals
+2024-11-09 12:45:56,866 - FreeAIDocker - INFO - 保存赚钱目标成功: 100块
+2024-11-09 12:45:56,867 - FreeAIDocker - ERROR - Invalid resource data format: {'risk_level': '低风险', 'execution_mode': '手动档', 'scan_interval': 1, 'last_api_name': '', 'last_money_goal': '100块', 'last_money_idea': '创建网站接入广告', 'system_env': 'Windows'}
+2024-11-09 12:45:56,867 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:45:56,867 - FreeAIDocker - ERROR - 保存状态失败: Resource data must contain 'name' field
+2024-11-09 12:46:05,241 - FreeAIDocker - INFO - Added money goals to prompt: , 
+2024-11-09 12:46:14,445 - FreeAIDocker - INFO - Added money goals to prompt: , 
+2024-11-09 12:46:22,962 - FreeAIDocker - INFO - 执行第 1 轮 - 状态: 命令已执行
+2024-11-09 12:49:21,555 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 12:49:21,565 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 12:49:21,606 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:49:21,607 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 12:49:21,607 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:49:21,607 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:49:21,612 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:49:21,858 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 12:49:21,876 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 12:49:22,225 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:49:23,008 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 12:49:29,088 - FreeAIDocker - INFO - Starting system scanner
+2024-11-09 12:49:29,247 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:49:29,247 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:49:29,247 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:49:29,247 - scanner - INFO - Resource scan completed successfully
+2024-11-09 12:49:29,247 - scanner - INFO - Scan completed:
+扫描时间: 2024-11-09T12:49:29.088371
+
+资源状态:
+
+项目结构:
+- 文件数量: 13989
+- 目录数量: 1326
+2024-11-09 12:49:59,211 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:49:59,236 - FreeAIDocker - INFO - Resource saved successfully: money_goals
+2024-11-09 12:49:59,236 - FreeAIDocker - INFO - 保存赚钱目标成功: 赚一百块
+2024-11-09 12:49:59,237 - FreeAIDocker - ERROR - Invalid resource data format: {'risk_level': '低风险', 'execution_mode': '手动档', 'scan_interval': 1, 'last_api_name': '', 'last_money_goal': '赚一百块', 'last_money_idea': '创建网站，接入广告SDK', 'system_env': 'Windows'}
+2024-11-09 12:49:59,237 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:49:59,237 - FreeAIDocker - ERROR - 保存状态失败: Resource data must contain 'name' field
+2024-11-09 12:50:07,351 - FreeAIDocker - INFO - Added money goals to prompt: , 
+2024-11-09 12:51:21,672 - FreeAIDocker - INFO - 目标已达成: 赚一百块
+2024-11-09 12:53:59,361 - FreeAIDocker - INFO - Initializing Free_AI_Docker...
+2024-11-09 12:53:59,372 - command_executor - INFO - Created subdirectory: E:\Free_AI_Docker_0\Free_AI_Docker\workspace\projects
+2024-11-09 12:53:59,372 - FreeAIDocker - INFO - Free_AI_Docker initialized successfully
+2024-11-09 12:53:59,413 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:53:59,413 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:53:59,414 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:53:59,418 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:53:59,432 - httpx - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-11-09 12:53:59,667 - httpx - INFO - HTTP Request: GET http://localhost:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2024-11-09 12:53:59,688 - httpx - INFO - HTTP Request: HEAD http://localhost:7860/ "HTTP/1.1 200 OK"
+2024-11-09 12:54:00,277 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-11-09 12:54:01,025 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:54:06,705 - FreeAIDocker - INFO - Starting system scanner
+2024-11-09 12:54:06,824 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:54:06,824 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:54:06,824 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:54:06,824 - scanner - INFO - Resource scan completed successfully
+2024-11-09 12:54:06,824 - scanner - INFO - Scan completed:
+扫描时间: 2024-11-09T12:54:06.706274
+
+资源状态:
+
+项目结构:
+- 文件数量: 13990
+- 目录数量: 1328
+2024-11-09 12:54:23,821 - FreeAIDocker - ERROR - Failed to get all resources: 
+2024-11-09 12:54:23,851 - FreeAIDocker - INFO - Resource saved successfully: money_goals
+2024-11-09 12:54:23,859 - FreeAIDocker - INFO - 保存赚钱目标成功: 100块
+2024-11-09 12:54:23,859 - FreeAIDocker - ERROR - Invalid resource data format: {'risk_level': '低风险', 'execution_mode': '手动档', 'scan_interval': 1, 'last_api_name': '', 'last_money_goal': '100块', 'last_money_idea': '创建网站，接入广告SDK', 'system_env': 'Windows'}
+2024-11-09 12:54:23,859 - FreeAIDocker - ERROR - Failed to save resource: Resource data must contain 'name' field
+2024-11-09 12:54:23,859 - FreeAIDocker - ERROR - 保存状态失败: Resource data must contain 'name' field
+2024-11-09 12:54:30,895 - FreeAIDocker - INFO - Added money goals to prompt: , 
+2024-11-09 12:56:25,093 - FreeAIDocker - INFO - Added money goals to prompt: , 
+2024-11-09 12:56:34,918 - FreeAIDocker - INFO - 执行第 1 轮 - 状态: 命令已执行
+2024-11-09 12:56:34,919 - FreeAIDocker - INFO - Added money goals to prompt: , 
