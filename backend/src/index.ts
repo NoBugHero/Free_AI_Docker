@@ -1,42 +1,40 @@
 import express from 'express';
+import cors from 'cors';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
-import cors from 'cors';
-import { ChatController } from './controllers/ChatController';
-
-// 声明全局 WebSocket 实例
-declare global {
-  var io: Server | undefined;
-}
+import apiRouter from './routes/api';
 
 const app = express();
 const httpServer = createServer(app);
 
-// CORS 配置
-const corsOptions = {
-  origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],
-  methods: ['GET', 'POST'],
-  credentials: true
-};
-
-app.use(cors(corsOptions));
-app.use(express.json());
-
-// WebSocket 配置
+// 确保在所有中间件之前初始化 Socket.IO
 const io = new Server(httpServer, {
-  cors: corsOptions
+  cors: {
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST"],
+    credentials: true
+  }
 });
 
-// 设置全局 io 实例
-global.io = io;
+// 导出 io 实例以供其他模块使用
+export { io };
 
-// 聊天路由
-app.post('/api/chat', ChatController.handleChat);
+const port = 3000;
 
-// WebSocket连接
+// 中间件
+app.use(cors({
+  origin: "http://localhost:5173",
+  credentials: true
+}));
+app.use(express.json());
+
+// 使用路由
+app.use('/api', apiRouter);
+
+// WebSocket 连接处理
 io.on('connection', (socket) => {
   console.log('Client connected');
-  
+
   socket.on('disconnect', () => {
     console.log('Client disconnected');
   });
@@ -44,32 +42,14 @@ io.on('connection', (socket) => {
 
 // 错误处理中间件
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
-  console.error('Global error:', err);
-  global.io?.emit('terminal-log', {
-    type: 'error',
-    message: '服务器错误',
-    details: err.message
-  });
-  
+  console.error('Error:', err);
   res.status(500).json({
-    error: '服务器错误',
-    details: err.message
+    success: false,
+    message: '服务器内部错误'
   });
 });
 
-const PORT = process.env.PORT || 3000;
-httpServer.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-  global.io?.emit('terminal-log', {
-    type: 'system',
-    message: `服务器启动在端口 ${PORT}`
-  });
+// 使用 httpServer 而不是 app 来监听
+httpServer.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
-
-// 优雅关闭
-process.on('SIGTERM', () => {
-  httpServer.close(() => {
-    console.log('Server closed');
-    process.exit(0);
-  });
-}); 

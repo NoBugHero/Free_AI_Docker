@@ -4,7 +4,7 @@ A powerful AI-powered development tool that helps you interact with AI models an
 
 ## ✨ Features
 
-- 🤖 **AI Integration**: Seamlessly integrate with various AI models (currently supports Qwen)
+- 🤖 **AI Integration**: Seamlessly integrate with various AI models (Qwen, OpenAI, Gemini)
 - 🔄 **Auto-Execution**: Automatically parse and execute commands from AI responses
 - 📁 **File Management**: Create and manage files based on AI instructions
 - 🖥️ **Terminal Integration**: Real-time command execution feedback
@@ -30,11 +30,12 @@ A powerful AI-powered development tool that helps you interact with AI models an
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
-- npm or yarn
+- Node.js (v18.0.0 or higher)
+- npm (v9.0.0 or higher)
+- PowerShell (v5.1 or higher)
 - Git
 
-### Installation
+### Quick Install
 
 1. **Clone the repository**
 ```bash
@@ -42,30 +43,72 @@ git clone https://github.com/supersuperbruce/free-ai-docker.git
 cd free-ai-docker
 ```
 
-2. **Install dependencies**
+2. **Install all dependencies using requirements.txt**
 ```bash
-# Install frontend dependencies
-cd frontend
-npm install
-
 # Install backend dependencies
-cd ../backend
-npm install
+cd backend
+npm install $(cat requirements.txt | grep "Backend" -A 10 | grep -v "Backend" | grep -v "^$" | tr '\n' ' ')
+
+# Install frontend dependencies
+cd ../frontend
+npm install $(cat ../requirements.txt | grep "Frontend" -A 10 | grep -v "Frontend" | grep -v "^$" | tr '\n' ' ')
 ```
 
-3. **Start the development servers**
+### Manual Installation
+
+1. **Install backend dependencies**
 ```bash
-# Start backend server (in backend directory)
-npm run dev
-
-# Start frontend server (in frontend directory)
-npm run dev
+cd backend
+npm install typescript@5.6.3 ts-node@10.9.2 ts-node-dev@2.0.0 express@4.18.2 cors@2.8.5 socket.io@4.7.4 @types/express@4.17.21 @types/cors@2.8.17 @types/node@20.11.24
 ```
 
-4. **Open your browser**
+2. **Install frontend dependencies**
+```bash
+cd frontend
+npm install vue@3.4.19 vite@5.1.4 @vitejs/plugin-vue@5.0.4 typescript@5.6.3 @vue/tsconfig@0.5.1
 ```
-Navigate to http://localhost:5173
+
+### Development Setup
+
+1. **Start backend server**
+```bash
+cd backend
+npm run dev
+# Server will start on http://localhost:3000
 ```
+
+2. **Start frontend development server**
+```bash
+cd frontend
+npm run dev
+# Frontend will be available on http://localhost:5173
+```
+
+3. **Access the application**
+- Open your browser and navigate to `http://localhost:5173`
+- Configure your AI provider settings in the configuration panel
+
+### Configuration
+
+Configure the following in the settings panel:
+- `API Key`: Your AI provider's API key
+- `API URL`: The API endpoint URL
+- `Model`: AI model name
+- `Save Path`: Directory path for file operations
+
+### Supported AI Providers
+
+- **Qwen**
+  - URL: https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation
+  - Models: qwen-turbo, qwen-plus, qwen-max
+
+- **OpenAI**
+  - URL: https://api.openai.com/v1/chat/completions
+  - Models: gpt-3.5-turbo, gpt-4
+
+- **Gemini**
+  - URL: https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent
+  - Models: gemini-pro
 
 ## 🔧 Configuration
 

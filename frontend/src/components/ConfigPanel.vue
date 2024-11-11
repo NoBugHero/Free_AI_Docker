@@ -1,121 +1,217 @@
-<template>
-  <el-form :model="config" label-width="120px">
-    <el-form-item label="API Key">
-      <el-input v-model="config.apiKey" type="password" show-password />
-    </el-form-item>
-    
-    <el-form-item label="API URL">
-      <el-select v-model="selectedApi" placeholder="选择API类型" @change="handleApiChange">
-        <el-option label="通义千问" value="qwen" />
-      </el-select>
-      <el-input 
-        v-model="config.apiUrl" 
-        :placeholder="apiPlaceholder"
-      />
-    </el-form-item>
-
-    <el-form-item label="模型">
-      <el-input 
-        v-model="config.model" 
-        placeholder="输入模型名称，如：qwen-turbo"
-      >
-        <template #append>
-          <el-tooltip 
-            content="常用模型：qwen-turbo, qwen-plus, qwen-max, qwen-max-1201, qwen-max-longcontext" 
-            placement="top"
-          >
-            <el-icon><QuestionFilled /></el-icon>
-          </el-tooltip>
-        </template>
-      </el-input>
-    </el-form-item>
-    
-    <el-form-item label="保存路径">
-      <el-input v-model="config.savePath" />
-    </el-form-item>
-    
-    <el-form-item>
-      <el-button type="primary" @click="saveConfig">保存配置</el-button>
-    </el-form-item>
-  </el-form>
-</template>
-
 <script setup lang="ts">
-import { reactive, ref, computed } from 'vue'
-import { useConfigStore } from '../stores/config'
-import { ElMessage } from 'element-plus'
-import { QuestionFilled } from '@element-plus/icons-vue'
-import type { Config } from '../types'
+import { ref, reactive, onMounted } from 'vue';
 
-const configStore = useConfigStore()
-const selectedApi = ref('qwen')
+const emit = defineEmits(['config-saved']);
 
-const config = reactive<Config>({
-  apiKey: configStore.apiKey,
-  apiUrl: configStore.apiUrl || '',
-  model: configStore.model || '',
-  savePath: configStore.savePath
-})
+// 定义配置对象
+const config = reactive({
+  apiKey: '',
+  apiUrl: '',
+  model: '',
+  savePath: ''
+});
 
-const apiPlaceholder = computed(() => {
-  return selectedApi.value === 'qwen' 
-    ? 'https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation'
-    : ''
-})
+const saveStatus = ref(''); // 用于显示保存状态
 
-const handleApiChange = (value: string) => {
-  if (value === 'qwen') {
-    config.apiUrl = 'https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation'
-    config.model = 'qwen2.5-3b-instruct'
-  }
-}
-
-const saveConfig = () => {
-  if (!config.apiKey) {
-    ElMessage.warning('请输入 API Key')
-    return
-  }
-  
-  if (!config.apiUrl) {
-    ElMessage.warning('请输入 API URL')
-    return
-  }
-
-  if (!config.model) {
-    ElMessage.warning('请输入模型名称')
-    return
-  }
-
+// 保存配置
+const saveConfig = async () => {
   try {
-    new URL(config.apiUrl)
-  } catch {
-    ElMessage.warning('请输入有效的 API URL')
-    return
+    saveStatus.value = '保存中...';
+    const response = await fetch('http://localhost:3000/api/config', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(config)
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.message || '保存失败');
+    }
+
+    // 保存到 localStorage
+    localStorage.setItem('aiConfig', JSON.stringify(config));
+    saveStatus.value = '保存成功';
+    
+    // 通知父组件更新API状态
+    emit('config-saved', true);
+    
+    setTimeout(() => {
+      saveStatus.value = '';
+    }, 3000);
+  } catch (error) {
+    console.error('保存配置失败:', error);
+    saveStatus.value = '保存失败，请重试';
+    emit('config-saved', false);
   }
-  
-  const configToSave = {
-    apiKey: config.apiKey,
-    apiUrl: config.apiUrl || '',
-    model: config.model,
-    savePath: config.savePath
-  }
-  
-  configStore.updateConfig(configToSave)
-  ElMessage.success('配置已保存')
-}
+};
+
+// 组件加载时读取配置
+onMounted(() => {
+  // 先尝试从后端获取配置
+  fetch('http://localhost:3000/api/config')
+    .then(res => res.json())
+    .then(data => {
+      if (data.config) {
+        Object.assign(config, data.config);
+        emit('config-saved', true);
+      } else {
+        // 如果后端没有配置，则尝试从localStorage读取
+        const savedConfig = localStorage.getItem('aiConfig');
+        if (savedConfig) {
+          const parsed = JSON.parse(savedConfig);
+          Object.assign(config, parsed);
+        }
+      }
+    })
+    .catch(() => {
+      // 如果后端请求失败，从localStorage读取
+      const savedConfig = localStorage.getItem('aiConfig');
+      if (savedConfig) {
+        const parsed = JSON.parse(savedConfig);
+        Object.assign(config, parsed);
+      }
+    });
+});
+
+const isApiKeyVisible = ref(false);
+const toggleApiKeyVisibility = () => {
+  isApiKeyVisible.value = !isApiKeyVisible.value;
+};
 </script>
 
+<template>
+  <div class="config-panel">
+    <div class="config-header">
+      <h3>配置面板</h3>
+      <span class="save-status" :class="{ 
+        'success': saveStatus === '保存成功',
+        'error': saveStatus === '保存失败，请重试'
+      }">{{ saveStatus }}</span>
+    </div>
+    <div class="config-grid">
+      <div class="input-group">
+        <label>API Key</label>
+        <div class="input-wrapper">
+          <input 
+            :type="isApiKeyVisible ? 'text' : 'password'"
+            v-model="config.apiKey" 
+            class="config-input"
+          />
+          <span class="toggle-visibility" @click="toggleApiKeyVisibility">
+            👁
+          </span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>API URL</label>
+        <input 
+          type="text" 
+          v-model="config.apiUrl" 
+          class="config-input"
+        />
+      </div>
+
+      <div class="input-group">
+        <label>模型</label>
+        <input 
+          type="text" 
+          v-model="config.model" 
+          class="config-input"
+        />
+      </div>
+
+      <div class="input-group">
+        <label>保存路径</label>
+        <input 
+          type="text" 
+          v-model="config.savePath" 
+          class="config-input"
+        />
+      </div>
+    </div>
+    <button @click="saveConfig" class="save-btn">保存配置</button>
+  </div>
+</template>
+
 <style scoped>
-.el-select {
+.config-panel {
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.config-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.input-group {
   width: 100%;
-  margin-bottom: 10px;
 }
 
-.el-tooltip__trigger {
-  cursor: help;
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
 }
 
-:deep(.el-input-group__append) {
-  padding: 0 10px;
+.config-input {
+  width: 100%;
+  min-width: 300px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-visibility {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+
+.save-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: #4a9eff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #3d8be0;
+}
+
+.config-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.save-status {
+  font-size: 14px;
+}
+
+.save-status.success {
+  color: #89d185;
+}
+
+.save-status.error {
+  color: #f48771;
 }
 </style> 

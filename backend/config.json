@@ -1,0 +1,6 @@
+{
+  "apiKey": "sk-8eebd0e8d5be456784b68a7a22635dbe",
+  "apiUrl": "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation",
+  "model": "qwen-max",
+  "savePath": "E:\\test"
+}

@@ -1,146 +1,103 @@
 <script setup lang="ts">
-import { ref, provide } from 'vue'
 import ConfigPanel from './components/ConfigPanel.vue'
 import ChatInterface from './components/ChatInterface.vue'
 import Terminal from './components/Terminal.vue'
-import { useConfigStore } from './stores/config'
-
-const configStore = useConfigStore()
-const terminal = ref()
-const chatInterface = ref()
-
-// 提供终端实例给子组件
-provide('terminal', terminal)
-
-// 暴露终端实例，供其他组件使用
-defineExpose({
-  terminal
-})
 </script>
 
 <template>
   <div class="app-container">
-    <el-container>
-      <el-header>
-        <div class="header-content">
-          <h2>Free AI Docker</h2>
-          <el-tag type="success" v-if="configStore.apiKey">API已配置</el-tag>
-          <el-tag type="danger" v-else>未配置API</el-tag>
-        </div>
-      </el-header>
-      
-      <el-container class="main-container">
-        <el-aside width="300px">
-          <el-card class="config-card">
-            <template #header>
-              <div class="card-header">
-                <span>配置面板</span>
-              </div>
-            </template>
-            <ConfigPanel />
-          </el-card>
-        </el-aside>
-        
-        <el-container class="content-container">
-          <el-main class="chat-container">
-            <el-card class="chat-card">
-              <template #header>
-                <div class="card-header">
-                  <span>AI 对话</span>
-                </div>
-              </template>
-              <ChatInterface ref="chatInterface" />
-            </el-card>
-          </el-main>
-          
-          <el-aside class="terminal-container" width="33%">
-            <el-card class="terminal-card">
-              <template #header>
-                <div class="card-header">
-                  <span>终端</span>
-                </div>
-              </template>
-              <Terminal ref="terminal" />
-            </el-card>
-          </el-aside>
-        </el-container>
-      </el-container>
-    </el-container>
+    <header class="app-header">
+      <h1>Free AI Docker</h1>
+    </header>
+
+    <div class="config-section">
+      <ConfigPanel />
+    </div>
+
+    <!-- 主要内容区域，固定高度 -->
+    <div class="main-content">
+      <div class="chat-section">
+        <ChatInterface />
+      </div>
+      <div class="terminal-section">
+        <Terminal />
+      </div>
+    </div>
   </div>
 </template>
 
 <style>
-.app-container {
-  height: 100vh;
-  width: 100vw;
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.el-header {
-  background-color: #409EFF;
-  color: white;
-  line-height: 60px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
-}
-
-.main-container {
-  height: calc(100vh - 60px);
-  background-color: #f0f2f5;
-}
-
-.content-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.el-aside {
-  background-color: #f0f2f5;
-  padding: 20px;
-}
-
-.chat-container {
-  flex: 1;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.terminal-container {
-  background-color: #f0f2f5;
-  padding: 20px;
-  border-left: 1px solid #e6e6e6;
-  width: 33% !important;
-}
-
-.config-card, .chat-card, .terminal-card {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.chat-card .el-card__body,
-.terminal-card .el-card__body {
-  height: calc(100% - 55px);
+/* 重置基础样式 */
+* {
+  margin: 0;
   padding: 0;
-  flex: 1;
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
-.card-header {
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* 应用容器 */
+.app-container {
+  height: 140vh; /* 使用视口高度 */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 12px; /* 减小间距 */
+  overflow: hidden; /* 防止整体滚动 */
+}
+
+/* 头部样式 */
+.app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 20px;
+  background-color: #4a9eff;
+  color: white;
+  border-radius: 8px;
 }
 
-.el-card__body {
-  overflow: hidden;
+/* 配置区域 - 减小高度 */
+.config-section {
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  max-height: 250px; /* 限制最大高度 */
+  overflow-y: none; /* 如果内容过多允许滚动 */
+}
+
+/* 主要内容区域 - 固定高度并允许子元素滚动 */
+.main-content {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  min-height: 0; /* 重要：允许flex子项收缩 */
+  overflow: hidden; /* 防止内容溢出 */
+}
+
+/* 聊天区域 */
+.chat-section {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden; /* 确保内容在容器内滚动 */
+}
+
+/* 终端区域 */
+.terminal-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden; /* 确保内容在容器内滚动 */
 }
 </style>
