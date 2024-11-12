@@ -7,25 +7,30 @@ import apiRouter from './routes/api';
 const app = express();
 const httpServer = createServer(app);
 
-// 确保在所有中间件之前初始化 Socket.IO
+// 配置 CORS
+const corsOptions = {
+  origin: ["http://localhost:5173"],
+  methods: ["GET", "POST"],
+  credentials: true,
+  allowedHeaders: ['Content-Type']
+};
+
+app.use(cors(corsOptions));
+
+// 配置 Socket.IO
 const io = new Server(httpServer, {
-  cors: {
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST"],
-    credentials: true
-  }
+  cors: corsOptions,
+  pingTimeout: 60000,
+  pingInterval: 25000,
+  transports: ['websocket', 'polling'],
+  path: '/socket.io'
 });
 
-// 导出 io 实例以供其他模块使用
 export { io };
 
 const port = 3000;
 
 // 中间件
-app.use(cors({
-  origin: "http://localhost:5173",
-  credentials: true
-}));
 app.use(express.json());
 
 // 使用路由
@@ -33,10 +38,23 @@ app.use('/api', apiRouter);
 
 // WebSocket 连接处理
 io.on('connection', (socket) => {
-  console.log('Client connected');
+  console.log('Client connected:', {
+    id: socket.id,
+    transport: socket.conn.transport.name
+  });
 
-  socket.on('disconnect', () => {
-    console.log('Client disconnected');
+  socket.on('disconnect', (reason) => {
+    console.log('Client disconnected:', {
+      id: socket.id,
+      reason: reason
+    });
+  });
+
+  socket.on('error', (error) => {
+    console.error('Socket error:', {
+      id: socket.id,
+      error: error
+    });
   });
 });
 
@@ -45,11 +63,10 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
   console.error('Error:', err);
   res.status(500).json({
     success: false,
-    message: '服务器内部错误'
+    message: err.message || '服务器内部错误'
   });
 });
 
-// 使用 httpServer 而不是 app 来监听
 httpServer.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

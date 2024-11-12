@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive, onMounted } from 'vue';
+import { ref, reactive, computed, onMounted } from 'vue';
 
 const emit = defineEmits(['config-saved']);
 
@@ -8,14 +8,62 @@ const config = reactive({
   apiKey: '',
   apiUrl: '',
   model: '',
-  savePath: ''
+  savePath: '',
+  provider: 'openai'
 });
 
 const saveStatus = ref(''); // 用于显示保存状态
 
+// 判断是否为 Ollama
+const isOllama = computed(() => {
+  return config.apiUrl.includes('localhost:11434') || config.apiUrl.includes('127.0.0.1:11434');
+});
+
+// 获取 URL 占位符
+const getUrlPlaceholder = computed(() => {
+  return '例如: http://localhost:11434/v1/chat/completions (Ollama) 或 https://api.openai.com/v1 (OpenAI)';
+});
+
+// 获取模型占位符
+const getModelPlaceholder = computed(() => {
+  if (isOllama.value) {
+    return '例如: llama2, mistral, codellama';
+  }
+  return '例如: gpt-3.5-turbo (OpenAI) 或 qwen-turbo (通义千问)';
+});
+
 // 保存配置
 const saveConfig = async () => {
   try {
+    // 验证必填字段
+    if (!config.apiUrl.trim()) {
+      saveStatus.value = '请输入 API URL';
+      return;
+    }
+    if (!config.model.trim()) {
+      saveStatus.value = '请输入模型名称';
+      return;
+    }
+    if (!config.savePath.trim()) {
+      saveStatus.value = '请输入保存路径';
+      return;
+    }
+
+    // 规范化 URL
+    if (config.apiUrl.includes('localhost:11434') || config.apiUrl.includes('127.0.0.1:11434')) {
+      if (!config.apiUrl.endsWith('/v1/chat/completions')) {
+        config.apiUrl = config.apiUrl.replace(/\/+$/, '') + '/v1/chat/completions';
+      }
+    }
+
+    // 如果是 Ollama，设置默认值
+    if (config.apiUrl.includes('/v1/chat/completions')) {
+      config.provider = 'ollama';
+      if (!config.apiKey) {
+        config.apiKey = 'ollama';  // 设置默认值
+      }
+    }
+
     saveStatus.value = '保存中...';
     const response = await fetch('http://localhost:3000/api/config', {
       method: 'POST',
@@ -31,11 +79,8 @@ const saveConfig = async () => {
       throw new Error(result.message || '保存失败');
     }
 
-    // 保存到 localStorage
     localStorage.setItem('aiConfig', JSON.stringify(config));
     saveStatus.value = '保存成功';
-    
-    // 通知父组件更新API状态
     emit('config-saved', true);
     
     setTimeout(() => {
@@ -98,6 +143,7 @@ const toggleApiKeyVisibility = () => {
           <input 
             :type="isApiKeyVisible ? 'text' : 'password'"
             v-model="config.apiKey" 
+            :placeholder="isOllama ? '本地 Ollama 可选填 API Key' : '请输入 API Key'"
             class="config-input"
           />
           <span class="toggle-visibility" @click="toggleApiKeyVisibility">
@@ -111,15 +157,17 @@ const toggleApiKeyVisibility = () => {
         <input 
           type="text" 
           v-model="config.apiUrl" 
+          :placeholder="getUrlPlaceholder"
           class="config-input"
         />
       </div>
 
       <div class="input-group">
-        <label>模型</label>
+        <label>模型名称</label>
         <input 
           type="text" 
           v-model="config.model" 
+          :placeholder="getModelPlaceholder"
           class="config-input"
         />
       </div>
@@ -129,6 +177,7 @@ const toggleApiKeyVisibility = () => {
         <input 
           type="text" 
           v-model="config.savePath" 
+          placeholder="请输入文件保存路径"
           class="config-input"
         />
       </div>

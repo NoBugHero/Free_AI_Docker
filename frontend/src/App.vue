@@ -66,7 +66,7 @@ body {
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  max-height: 250px; /* 限制最大高度 */
+  max-height: 400px; /* 限制最大高度 */
   overflow-y: none; /* 如果内容过多允许滚动 */
 }
 

@@ -187,7 +187,7 @@ textarea:disabled {
 </style>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 
 const messages = ref<Array<{role: string, content: string}>>([]);
 const inputMessage = ref('');
@@ -201,7 +201,55 @@ const scrollToBottom = () => {
   }
 };
 
-// 修改发送消息函数，使用 TextDecoder 流式处理响应
+// 添加处理流式响应的函数
+const handleStreamResponse = (data: { type: string, content: string }) => {
+  console.log('Handling stream response:', data);
+
+  switch (data.type) {
+    case 'ai-response':
+      // 如果最后一条消息是 AI 的回复，则追加内容
+      if (messages.value.length > 0 && messages.value[messages.value.length - 1].role === 'assistant') {
+        messages.value[messages.value.length - 1].content += data.content;
+      } else {
+        // 否则创建新的 AI 回复消息
+        messages.value.push({
+          role: 'assistant',
+          content: data.content
+        });
+      }
+      // 修改这里：立即检查是否包含完成标记并重置状态
+      if (data.content.includes('[COMPLETE]')) {
+        isLoading.value = false;
+        // 确保输入框和按钮状态被重置
+        nextTick(() => {
+          inputMessage.value = '';
+        });
+      }
+      break;
+
+    case 'execution-result':
+      messages.value.push({
+        role: 'system',
+        content: data.content
+      });
+      break;
+
+    case 'error':
+      messages.value.push({
+        role: 'system',
+        content: `错误: ${data.content}`
+      });
+      isLoading.value = false;  // 发生错误时重置状态
+      break;
+
+    default:
+      console.warn('Unknown response type:', data.type);
+  }
+
+  scrollToBottom();
+};
+
+// 修改发送消息函数
 const sendMessage = async () => {
   if (!inputMessage.value.trim() || isLoading.value) return;
   
@@ -213,9 +261,12 @@ const sendMessage = async () => {
   
   inputMessage.value = '';
   isLoading.value = true;
+  scrollToBottom();
+  
+  let abortController = new AbortController();
   
   try {
-    const response = await fetch('http://localhost:3000/api/chat', {
+    const response = await fetch('/api/chat', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -223,76 +274,54 @@ const sendMessage = async () => {
       body: JSON.stringify({
         message: userMessage
       }),
-      credentials: 'include'
+      signal: abortController.signal
     });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
     const reader = response.body?.getReader();
-    if (!reader) throw new Error('无法读取响应');
+    if (!reader) {
+      throw new Error('No response body');
+    }
 
     const decoder = new TextDecoder();
-    let buffer = '';
-
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-
-      // 解码新的数据块并添加到缓冲区
-      buffer += decoder.decode(value, { stream: true });
-
-      // 处理完整的事件
-      const lines = buffer.split('\n\n');
-      buffer = lines.pop() || ''; // 保留不完整的最后一行
-
-      for (const line of lines) {
-        if (!line.startsWith('data: ')) continue;
+    
+    try {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) {
+          isLoading.value = false;  // 流结束时重置状态
+          break;
+        }
         
-        try {
-          const data = JSON.parse(line.slice(6));
+        const chunk = decoder.decode(value);
+        const lines = chunk.split('\n');
+        
+        for (const line of lines) {
+          if (!line.trim() || !line.startsWith('data: ')) continue;
           
-          switch (data.type) {
-            case 'ai-response':
-              // 添加或更新 AI 响应
-              const lastMessage = messages.value[messages.value.length - 1];
-              if (lastMessage?.role === 'assistant') {
-                lastMessage.content += data.content;
-              } else {
-                messages.value.push({
-                  role: 'assistant',
-                  content: data.content
-                });
-              }
-              break;
-
-            case 'execution-result':
-              messages.value.push({
-                role: 'system',
-                content: data.content
-              });
-              break;
-
-            case 'error':
-              messages.value.push({
-                role: 'system',
-                content: `错误: ${data.content}`
-              });
-              break;
+          try {
+            const data = JSON.parse(line.slice(6));
+            handleStreamResponse(data);
+          } catch (e) {
+            console.error('Error parsing SSE data:', e);
           }
-
-          // 每次更新后滚动到底部
-          scrollToBottom();
-        } catch (e) {
-          console.error('解析事件数据失败:', e);
         }
       }
+    } catch (error) {
+      console.error('Error reading stream:', error);
+      isLoading.value = false;  // 读取流错误时重置状态
+      throw error;
     }
-  } catch (error: any) {
+  } catch (error) {
+    console.error('Error sending message:', error);
     messages.value.push({
       role: 'system',
-      content: `错误: ${error.message}`
+      content: `错误: ${error instanceof Error ? error.message : 'network error'}`
     });
-  } finally {
-    isLoading.value = false;
-    scrollToBottom();
+    isLoading.value = false;  // 发生错误时重置状态
   }
 };
 

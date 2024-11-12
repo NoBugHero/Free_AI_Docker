@@ -5,7 +5,10 @@
       <button @click="clearLogs" class="clear-btn">清空日志</button>
     </div>
     <div class="terminal-content" ref="terminalContent">
-      <pre v-for="(log, index) in logs" :key="index" :class="getLogClass(log)">{{ log }}</pre>
+      <pre v-for="(log, index) in logs" 
+           :key="index" 
+           :class="[getLogClass(log), { 'streaming': log.isStreaming }]"
+      >{{ log.content }}</pre>
     </div>
   </div>
 </template>
@@ -37,16 +40,19 @@
   flex: 1;
   padding: 15px;
   overflow-y: auto;
-  font-family: 'Consolas', 'Monaco', monospace;
+  font-family: 'Consolas', 'Microsoft YaHei Mono', monospace;
   font-size: 14px;
   line-height: 1.4;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 pre {
-  margin: 0;
+  margin: 2px 0;
   padding: 2px 0;
   white-space: pre-wrap;
   word-wrap: break-word;
+  font-family: 'Consolas', 'Microsoft YaHei Mono', monospace;
 }
 
 /* VS Code 风格的配色 */
@@ -86,47 +92,117 @@ pre {
 .clear-btn:hover {
   background: #666;
 }
+
+.streaming {
+  border-left: 2px solid #4a9eff;
+  padding-left: 8px;
+}
 </style>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
-import { io } from 'socket.io-client';
+interface TerminalLog {
+  content: string;
+  isStreaming: boolean;
+}
 
-const logs = ref<string[]>([]);
+import { ref, onMounted, onUnmounted, nextTick } from 'vue';
+import { io, Socket } from 'socket.io-client';
+
+const logs = ref<TerminalLog[]>([]);
 const terminalContent = ref<HTMLElement | null>(null);
-const socket = io('http://localhost:3000', {
-  withCredentials: true,
-  transports: ['websocket', 'polling']
-});
+let socket: Socket | null = null;
 
-// 添加连接状态处理
-socket.on('connect', () => {
-  addLog('WebSocket connected');
-});
+// 修改 socket 初始化函数
+const initSocket = () => {
+  if (socket) {
+    socket.disconnect();
+  }
 
-socket.on('connect_error', (error) => {
-  console.error('WebSocket connection error:', error);
-  addLog('WebSocket connection error');
-});
+  socket = io('http://localhost:3000', {  // 使用完整的服务器 URL
+    transports: ['websocket'],
+    reconnection: true,
+    reconnectionAttempts: 5,
+    reconnectionDelay: 1000,
+    autoConnect: true,
+    withCredentials: true
+  });
 
-// 接收实时命令输出
-socket.on('command-output', (output: string) => {
-  addLog(output);
-});
+  // 添加事件监听
+  socket.on('connect', () => {
+    console.log('WebSocket connected:', socket?.id);
+    addLog('PowerShell Terminal initialized...');
+    addLog('Ready for commands...');
+    addLog(`WebSocket connected: ${socket?.id}`);
+  });
 
-// 组件卸载时断开连接
-onUnmounted(() => {
-  socket.disconnect();
-});
+  socket.on('disconnect', (reason) => {
+    console.log('WebSocket disconnected:', reason);
+    addLog(`WebSocket disconnected: ${reason}`);
+    
+    // 自动重连
+    setTimeout(() => {
+      console.log('Attempting to reconnect...');
+      initSocket();  // 重新初始化连接
+    }, 2000);
+  });
 
-// 添加日志
-const addLog = (log: string) => {
-  logs.value.push(log);
-  setTimeout(() => {
-    if (terminalContent.value) {
-      terminalContent.value.scrollTop = terminalContent.value.scrollHeight;
+  socket.on('connect_error', (error) => {
+    console.error('Connection error:', error);
+    addLog(`Connection error: ${error.message}`);
+  });
+
+  socket.on('command-output', (output: string) => {
+    console.log('Received command output:', output);
+    addLog(output);
+  });
+
+  socket.on('error', (error: Error) => {
+    console.error('Socket error:', error);
+    addLog(`Socket error: ${error.message}`);
+  });
+
+  // 添加心跳检测
+  const heartbeat = setInterval(() => {
+    if (socket?.connected) {
+      socket.emit('ping');
     }
-  }, 0);
+  }, 30000);
+
+  // 清理心跳定时器
+  socket.on('disconnect', () => {
+    clearInterval(heartbeat);
+  });
+};
+
+// 修改 addLog 函数
+const addLog = (message: string) => {
+  try {
+    console.log('Adding log:', message);
+
+    // 如果最后一条日志是流式内容，则追加
+    if (logs.value.length > 0 && logs.value[logs.value.length - 1].isStreaming) {
+      logs.value[logs.value.length - 1].content += '\n' + message;
+    } else {
+      // 否则创建新的日志条目
+      logs.value.push({
+        content: message,
+        isStreaming: message.startsWith('>')  // 命令开始标记
+      });
+    }
+
+    // 确保滚动到底部
+    nextTick(() => {
+      if (terminalContent.value) {
+        terminalContent.value.scrollTop = terminalContent.value.scrollHeight;
+      }
+    });
+  } catch (error: unknown) {
+    console.error('Error in addLog:', error);
+    logs.value.push({
+      content: `Error processing log: ${error instanceof Error ? error.message : 'Unknown error'}`,
+      isStreaming: false
+    });
+  }
 };
 
 // 清空日志
@@ -134,18 +210,27 @@ const clearLogs = () => {
   logs.value = [];
 };
 
-// 日志类型判断
-const getLogClass = (log: string) => {
-  if (log.includes('ERROR') || log.includes('error')) return 'log-error';
-  if (log.includes('SUCCESS') || log.includes('success')) return 'log-success';
-  if (log.includes('INFO') || log.includes('info')) return 'log-info';
-  if (log.includes('WARN') || log.includes('warning')) return 'log-warning';
-  if (log.startsWith('$') || log.startsWith('>')) return 'log-command';
+// 修改 getLogClass 函数
+const getLogClass = (log: TerminalLog) => {
+  const content = log.content.toLowerCase();
+  if (content.includes('error')) return 'log-error';
+  if (content.includes('success')) return 'log-success';
+  if (content.includes('info')) return 'log-info';
+  if (content.includes('warn')) return 'log-warning';
+  if (content.startsWith('>')) return 'log-command';
   return 'log-default';
 };
 
 onMounted(() => {
-  addLog('PowerShell Terminal initialized...');
-  addLog('Ready for commands...');
+  console.log('Terminal component mounted');
+  initSocket();
+});
+
+onUnmounted(() => {
+  console.log('Terminal component unmounting');
+  if (socket) {
+    socket.disconnect();
+    socket = null;
+  }
 });
 </script>
