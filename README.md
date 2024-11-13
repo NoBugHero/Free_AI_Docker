@@ -1,3 +1,8 @@
+## Quick View
+![动态演示](https://github.com/supersuperbruce/Free_AI_Docker/blob/MVP_0/QuickView202411131719.gif)
+
+Bilibili=https://www.bilibili.com/video/BV1J1mpYtECU/?vd_source=8d207dba7bcea3de1194e0a8c81c87d5
+
 # Free AI Docker 🐬📦
 
 Empower AI with more **System Permissions** through an **the Middleware Container** for **Advanced Automation**.
